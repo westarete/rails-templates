@@ -19,7 +19,7 @@ RSpec.configure do |config|
   config.include Helpers
 
   config.before(:all) do
-    FileUtils.rm(log_file)
+    FileUtils.rm_f(log_file)
   end
 end
 
