@@ -17,4 +17,8 @@ describe "The base template" do
     rails_root.join("README.md").should exist
   end
 
+  it "removes the test directory" do
+    rails_root.join("test").should_not exist
+  end
+
 end
