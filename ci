@@ -1,0 +1,15 @@
+#!/bin/bash
+# Continuous Integration build script.
+
+echo '========== Set Up RVM ==============================================='
+export PATH=$PATH:~/.rvm/bin
+source ~/.rvm/scripts/rvm
+rvm use `cat .ruby-version`
+set -e # Exit on any error
+set -x # Echo each command
+
+echo '========== Install Gems ============================================='
+bundle install --no-color
+
+echo '========== Run Tests ================================================'
+bundle exec rspec --no-color
