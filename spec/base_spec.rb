@@ -12,4 +12,9 @@ describe "The base template" do
     rails_root.should exist
   end
 
+  it "uses Markdown for the README" do
+    rails_root.join("README.rdoc").should_not exist
+    rails_root.join("README.md").should exist
+  end
+
 end
