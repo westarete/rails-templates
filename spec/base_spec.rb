@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "The base template" do
   before(:all) do
     FileUtils.chdir(tmp_dir) do
-      run "rm -rf app"
-      run "rails new app -m ../base.rb"
+      run "rm -rf #{rails_root}"
+      run "rails new #{rails_root} --template=../base.rb --skip-bundle"
     end
   end
 
